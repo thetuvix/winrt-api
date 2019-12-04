@@ -13,7 +13,7 @@ public Windows.UI.Input.Spatial.SpatialPointerPose TryGetAtTimestamp(Windows.Per
 
 ## -description
 
-Gets the head gaze and motion controller pointer poses for the specified timestamp.
+Gets the head gaze, eye gaze and motion controller pointer poses for the specified timestamp.
 
 ## -parameters
 
@@ -32,6 +32,8 @@ The pointer poses, or null if the specified coordinate system cannot be located.
 ## -remarks
 
 This will either be a timestamp from the past (when correlating with input events) or a timestamp from the future (when rendering a cursor along the user's predicted gaze for a [HolographicFramePrediction](../windows.graphics.holographic/holographicframeprediction.md)).
+
+Note that some devices may not support eye pose prediction for future timestamps.  You can get [EyesPose.UpdateTimestamp](../windows.perception.people/eyespose_updatetimestamp.md) to determine the effective timestamp for an eye pose reading.
 
 ## -examples
 
